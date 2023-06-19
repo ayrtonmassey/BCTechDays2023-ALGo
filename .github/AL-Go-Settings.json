@@ -1,4 +1,11 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@PPPreview"
+  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@PPPreview",
+  "environments": [
+    "TechDaysPrivate"
+  ],
+  "DeployToTechDaysPrivate": {
+    "environmentName": "Production",
+    "companyId": "1536b51a-7d00-ee11-8f75-6045bdacccd6"
+  }
 }
