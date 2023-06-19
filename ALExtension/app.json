@@ -1,0 +1,32 @@
+{
+  "id": "33a10814-4586-4419-a39e-d65600be3260",
+  "name": "BCTechDays2023",
+  "publisher": "Microsoft",
+  "version": "0.0.70.0",
+  "brief": "Extension for BCTechDays2023",
+  "description": "Extension for BCTechDays2023 session, demonstrating Power Platform improvements such as Business Events, Adaptive Card Layouts, and Power Automate Template CustomActions. For demonstration purposes only. Not to be used in production.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "22.0.0.0",
+  "idRanges": [
+    {
+      "from": 52333,
+      "to": 52340
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "11.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
