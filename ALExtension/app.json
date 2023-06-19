@@ -1,7 +1,7 @@
 {
   "id": "33a10814-4586-4419-a39e-d65600be3260",
   "name": "BCTechDays2023",
-  "publisher": "Microsoft",
+  "publisher": "Ayrton Massey",
   "version": "0.0.70.0",
   "brief": "Extension for BCTechDays2023",
   "description": "Extension for BCTechDays2023 session, demonstrating Power Platform improvements such as Business Events, Adaptive Card Layouts, and Power Automate Template CustomActions. For demonstration purposes only. Not to be used in production.",
