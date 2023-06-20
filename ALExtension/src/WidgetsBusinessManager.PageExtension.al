@@ -2,7 +2,7 @@ pageextension 52333 WidgetsBusinessManager extends "Business Manager Role Center
 {
     actions
     {
-        addafter("Chart of Accounts")
+        addbefore("Chart of Accounts")
         {
             action(Widgets)
             {

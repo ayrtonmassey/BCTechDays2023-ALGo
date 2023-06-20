@@ -16,17 +16,25 @@ page 52334 "Widgets List"
                 {
                     Caption = 'Number';
                 }
+                field(name; Rec.Name)
+                {
+                    Caption = 'Name';
+                }
                 field(description; Rec.Description)
                 {
                     Caption = 'Description';
                 }
+                field(productionTime; "Production Time")
+                {
+                    Caption = 'Production Time';
+                }
                 field(baseUnitOfMeasure; Rec."Base Unit of Measure")
                 {
-                    Caption = 'Base unit of measure';
+                    Caption = 'Base Unit of Measure';
                 }
                 field(approvalState; Rec."Approval State")
                 {
-                    Caption = 'Approval state';
+                    Caption = 'Approval State';
                 }
             }
         }

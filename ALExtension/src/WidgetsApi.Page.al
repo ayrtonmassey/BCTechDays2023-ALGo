@@ -25,21 +25,25 @@ page 52333 "Widgets API"
                 {
                     Caption = 'Number';
                 }
-                field(description; Rec.Description)
+                field(name; Rec.Name)
+                {
+                    Caption = 'Name';
+                }
+                field(description; Rec."Description")
                 {
                     Caption = 'Description';
                 }
-                field(searchDescription; Rec."Search Description")
+                field(approvalState; Rec."Approval State")
                 {
-                    Caption = 'Search description';
+                    Caption = 'Approval State';
                 }
                 field(baseUnitOfMeasure; Rec."Base Unit of Measure")
                 {
-                    Caption = 'Base unit of measure';
+                    Caption = 'Base Unit of Measure';
                 }
-                field(approvalState; Rec."Approval State")
+                field(productionTime; Rec."Production Time")
                 {
-                    Caption = 'Approval state';
+                    Caption = 'Production Time';
                 }
                 field(picture; NameValueBufferBlob."Value BLOB")
                 {
@@ -101,6 +105,7 @@ page 52333 "Widgets API"
     begin
         Rec.Validate("Approval State", Rec."Approval State"::Approved);
         Rec.Modify(true);
+        WidgetApproved(Rec.SystemId, Rec.Name, Rec.Description);
     end;
 
     [ServiceEnabled]
@@ -108,6 +113,7 @@ page 52333 "Widgets API"
     begin
         Rec.Validate("Approval State", Rec."Approval State"::Rejected);
         Rec.Modify(true);
+        WidgetRejected(Rec.SystemId, Rec.Name, Rec.Description);
     end;
 
     [ServiceEnabled]
@@ -117,4 +123,15 @@ page 52333 "Widgets API"
         Rec.Modify(true);
     end;
 
+    [ExternalBusinessEvent('WidgetApproved', 'Widget approved for production', 'Triggers when widget is approved for production.', Enum::EventCategory::Widgets)]
+    [RequiredPermissions(PermissionObjectType::TableData, Database::Widget, 'R')]
+    local procedure WidgetApproved(WidgetId: Guid; WidgetName: Text[100]; WidgetDescription: Text[250])
+    begin
+    end;
+
+    [ExternalBusinessEvent('WidgetRejected', 'Widget rejected for production', 'Triggers when widget is rejected for production.', Enum::EventCategory::Widgets)]
+    [RequiredPermissions(PermissionObjectType::TableData, Database::Widget, 'R')]
+    local procedure WidgetApproved(WidgetId: Guid; WidgetName: Text[100]; WidgetDescription: Text[250])
+    begin
+    end;
 }

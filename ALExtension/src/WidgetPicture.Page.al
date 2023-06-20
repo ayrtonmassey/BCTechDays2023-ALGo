@@ -68,7 +68,7 @@ page 52336 "Widget Picture"
     begin
         Rec.Find();
         Rec.TestField("No.");
-        Rec.TestField(Description);
+        Rec.TestField(Name);
     end;
 
     local procedure UploadFromDevice()

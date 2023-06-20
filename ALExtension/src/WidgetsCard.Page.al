@@ -8,7 +8,7 @@ page 52335 "Widgets Card"
     {
         area(Content)
         {
-            group(GroupName)
+            group(General)
             {
                 Caption = 'General';
                 Editable = Rec."Approval State" <> Rec."Approval State"::Open;
@@ -23,22 +23,32 @@ page 52335 "Widgets Card"
                     Caption = 'Number';
                     Editable = false;
                 }
-                field(description; Rec.Description)
+                field(name; Rec.Name)
+                {
+                    Caption = 'Name';
+                }
+                field(description; Rec."Description")
                 {
                     Caption = 'Description';
                 }
-                field(searchDescription; Rec."Search Description")
-                {
-                    Caption = 'Search description';
-                }
-                field(baseUnitOfMeasure; Rec."Base Unit of Measure")
-                {
-                    Caption = 'Base unit of measure';
-                }
                 field(approvalState; Rec."Approval State")
                 {
-                    Caption = 'Approval state';
+                    Caption = 'Approval State';
                     Editable = false;
+                }
+            }
+            group(Production)
+            {
+                Caption = 'Production Details';
+                Editable = Rec."Approval State" <> Rec."Approval State"::Open;
+
+                field(baseUnitOfMeasure; Rec."Base Unit of Measure")
+                {
+                    Caption = 'Base Unit of Measure';
+                }
+                field(productionTime; Rec."Production Time")
+                {
+                    Caption = 'Production Time';
                 }
             }
         }
@@ -55,11 +65,11 @@ page 52335 "Widgets Card"
 
     actions
     {
-        area(Navigation)
+        area(Processing)
         {
-            action(SendForApproval)
+            action(SendApprovalRequest)
             {
-                Caption = 'Send for approval';
+                Caption = 'Send Approval Request';
                 ApplicationArea = All;
 
                 trigger OnAction()
@@ -70,9 +80,9 @@ page 52335 "Widgets Card"
                     WidgetSentForApproval(Rec.SystemId);
                 end;
             }
-            action(CancelForApproval)
+            action(CancelApprovalRequest)
             {
-                Caption = 'Cancel approval';
+                Caption = 'Cancel Approval Request';
                 ApplicationArea = All;
 
                 trigger OnAction()
@@ -91,8 +101,8 @@ page 52335 "Widgets Card"
         Rec.Modify(true);
     end;
 
-    [ExternalBusinessEvent('WidgetSentForApproval', 'Widget is sent for approval', 'Triggers when a widget is sent for approval.', Enum::EventCategory::Widgets)]
-    local procedure WidgetSentForApproval(WidgetId: Guid)
+    [ExternalBusinessEvent('WidgetApprovalRequested', 'Approval is requested for widget', 'Triggers when an approval request is sent for a widget.', Enum::EventCategory::Widgets)]
+    local procedure WidgetApprovalRequested(WidgetId: Guid)
     begin
     end;
 }

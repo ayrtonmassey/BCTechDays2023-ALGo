@@ -9,19 +9,23 @@ table 52333 Widget
             Caption = 'No.';
             AutoIncrement = true;
         }
-        field(3; Description; Text[100])
+        field(3; Name; Text[100])
+        {
+            Caption = 'Name';
+        }
+        field(4; "Description"; Text[250])
         {
             Caption = 'Description';
-        }
-        field(4; "Search Description"; Code[100])
-        {
-            Caption = 'Search Description';
         }
         field(8; "Base Unit of Measure"; Code[10])
         {
             Caption = 'Base Unit of Measure';
             TableRelation = "Unit of Measure";
             ValidateTableRelation = false;
+        }
+        field(5; "Production Time"; Duration)
+        {
+            Caption = 'Production Time';
         }
         field(9; "Approval State"; Enum "Approval Status")
         {
@@ -43,10 +47,10 @@ table 52333 Widget
 
     fieldgroups
     {
-        fieldgroup(DropDown; "No.", Description, "Base Unit of Measure", "Approval State")
+        fieldgroup(DropDown; "No.", Name, "Base Unit of Measure", "Approval State")
         {
         }
-        fieldgroup(Brick; "No.", Description, "Base Unit of Measure", "Approval State", Picture)
+        fieldgroup(Brick; "No.", Name, "Base Unit of Measure", "Approval State", Picture)
         {
         }
     }
