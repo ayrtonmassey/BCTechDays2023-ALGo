@@ -24,7 +24,7 @@ page 52334 "Widgets List"
                 {
                     Caption = 'Description';
                 }
-                field(productionTime; "Production Time")
+                field(productionTime; Rec."Production Time")
                 {
                     Caption = 'Production Time';
                 }

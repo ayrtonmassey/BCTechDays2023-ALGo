@@ -131,7 +131,7 @@ page 52333 "Widgets API"
 
     [ExternalBusinessEvent('WidgetRejected', 'Widget rejected for production', 'Triggers when widget is rejected for production.', Enum::EventCategory::Widgets)]
     [RequiredPermissions(PermissionObjectType::TableData, Database::Widget, 'R')]
-    local procedure WidgetApproved(WidgetId: Guid; WidgetName: Text[100]; WidgetDescription: Text[250])
+    local procedure WidgetRejected(WidgetId: Guid; WidgetName: Text[100]; WidgetDescription: Text[250])
     begin
     end;
 }
