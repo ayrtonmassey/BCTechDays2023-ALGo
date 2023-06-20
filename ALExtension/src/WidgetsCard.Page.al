@@ -77,7 +77,7 @@ page 52335 "Widgets Card"
                     Rec.Validate("Approval State", Rec."Approval State"::Open);
                     Rec.Modify(true);
 
-                    WidgetSentForApproval(Rec.SystemId);
+                    WidgetApprovalRequested(Rec.SystemId);
                 end;
             }
             action(CancelApprovalRequest)
